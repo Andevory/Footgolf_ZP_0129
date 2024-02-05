@@ -7,6 +7,17 @@ for (int i = 0; i < input.Length; i++)
 
 Console.WriteLine($"A versenyen {data.Count} résztvevő indult.");
 
+double db = 0;
+for (int i = 0;i < data.Count;i++)
+{
+    if (data[i].Kategoria == "Noi")
+    {
+        db++;
+    }
+}
+Console.WriteLine($"A nők aránya a versenyen: {Math.Round((db / data.Count) * 100, 2)}%");
+
+
 struct Verseny
 {
     public string Nev;
