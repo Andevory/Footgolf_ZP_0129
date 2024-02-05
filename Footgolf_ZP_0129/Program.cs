@@ -17,7 +17,15 @@ for (int i = 0;i < data.Count;i++)
 }
 Console.WriteLine($"A nők aránya a versenyen: {Math.Round((db / data.Count) * 100, 2)}%");
 
-
+int maxn = 0;
+for (int i = 0; i < data.Count; i++)
+{
+    if (data[i].Kategoria == "Noi" && data[maxn].Osszpont() < data[i].Osszpont())
+    {
+        maxn = i;
+    }
+}
+Console.WriteLine($"A legjobb női résztvevő: {data[maxn].Nev}, pontszáma: {data[maxn].Osszpont()}");
 struct Verseny
 {
     public string Nev;
