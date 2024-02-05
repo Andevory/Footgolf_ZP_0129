@@ -36,5 +36,24 @@ struct Verseny
         {
             Pontok.Add(int.Parse(splitted[i]));
         }
+        Pontok.Sort();
+    }
+
+    public int Osszpont()
+    {
+        int sum = 0;
+        for (int i = 2; i < Pontok.Count; i++)
+        {
+            sum += Pontok[i];
+        }
+        if (Pontok[0] > 0)
+        {
+            sum += 10;
+        }
+        if ((Pontok[1] > 0))
+        {
+            sum += 10;
+        }
+        return sum;
     }
 }
